@@ -8,8 +8,8 @@
 #define MaxSize 100
 #define width 1000
 #define high 600
-	int left=0,right=600,up=0,under=600;//ÃÔ¹¬µÄËÄÖÜ
-	char s[]="->",a[]="£¬" ;
+	int left=0,right=600,up=0,under=600;//è¿·å®«çš„å››å‘¨
+	char s[]="->",a[]="ï¼Œ" ;
 	int mg[10][10]=
 {	
 	{1,1,1,1,1,1,1,1,1,1},
@@ -24,7 +24,7 @@
 	{1,1,1,1,1,1,1,1,1,1}
 };
 
-int home_show()		//¿ªÊ¼Ò³Ãæ
+int home_show()		//å¼€å§‹é¡µé¢
 {initgraph(width,high);
 	setfillcolor(GREEN);
 	fillrectangle(0,0,600,600);
@@ -41,68 +41,68 @@ int home_show()		//¿ªÊ¼Ò³Ãæ
 		{setfillcolor(RED);	fillrectangle(j*60,i*60,(j+1)*60,(i+1)*60);}
 		}
 		setfillcolor(RGB(52,222,220));
-		fillrectangle(1*60,0*60,(1+1)*60,(0+1)*60);//Èë¿Ú
-		fillrectangle(9*60,8*60,(9+1)*60,(8+1)*60);//³ö¿Ú
+		fillrectangle(1*60,0*60,(1+1)*60,(0+1)*60);//å…¥å£
+		fillrectangle(9*60,8*60,(9+1)*60,(8+1)*60);//å‡ºå£
 
 		setfillcolor(RED);
-		settextcolor(RGB(255, 255, 17));    //ÉèÖÃ×ÖÌåÑÕÉ«
-		settextstyle(60,0, "Î¢ÈíÑÅºÚ");   //ÉèÖÃ×ÖÌåµÄ,¿í(´Ö)¶È,¸ß(³¤)¶È,ºÍ×ÖÌå
-		outtextxy(750,60,"ÃÔ¹¬");
+		settextcolor(RGB(255, 255, 17));    //è®¾ç½®å­—ä½“é¢œè‰²
+		settextstyle(60,0, "å¾®è½¯é›…é»‘");   //è®¾ç½®å­—ä½“çš„,å®½(ç²—)åº¦,é«˜(é•¿)åº¦,å’Œå­—ä½“
+		outtextxy(750,60,"è¿·å®«");
 
 			setfillcolor(RED);
-		settextcolor(RGB(255, 255, 17));    //ÉèÖÃ×ÖÌåÑÕÉ«
-		settextstyle(30,0, "Î¢ÈíÑÅºÚ");   //ÉèÖÃ×ÖÌåµÄ,¿í(´Ö)¶È,¸ß(³¤)¶È,ºÍ×ÖÌå
-		outtextxy(700,150,"1.Õ»Ñ°ÕÒÃÔ¹¬Â·¾¶");
+		settextcolor(RGB(255, 255, 17));    //è®¾ç½®å­—ä½“é¢œè‰²
+		settextstyle(30,0, "å¾®è½¯é›…é»‘");   //è®¾ç½®å­—ä½“çš„,å®½(ç²—)åº¦,é«˜(é•¿)åº¦,å’Œå­—ä½“
+		outtextxy(700,150,"1.æ ˆå¯»æ‰¾è¿·å®«è·¯å¾„");
 			setfillcolor(RED);
-		settextcolor(RGB(255, 255, 17));    //ÉèÖÃ×ÖÌåÑÕÉ«
-		settextstyle(30,0, "Î¢ÈíÑÅºÚ");   //ÉèÖÃ×ÖÌåµÄ,¿í(´Ö)¶È,¸ß(³¤)¶È,ºÍ×ÖÌå
-		outtextxy(700,250,"2.Ñ°ÕÒÃÔ¹¬ËùÓĞÂ·¾¶");
+		settextcolor(RGB(255, 255, 17));    //è®¾ç½®å­—ä½“é¢œè‰²
+		settextstyle(30,0, "å¾®è½¯é›…é»‘");   //è®¾ç½®å­—ä½“çš„,å®½(ç²—)åº¦,é«˜(é•¿)åº¦,å’Œå­—ä½“
+		outtextxy(700,250,"2.å¯»æ‰¾è¿·å®«æ‰€æœ‰è·¯å¾„");
 			setfillcolor(RED);
 		//setbkcolor(GREEN);
-		settextcolor(RGB(255, 255, 17));    //ÉèÖÃ×ÖÌåÑÕÉ«
-		settextstyle(30,0, "Î¢ÈíÑÅºÚ");   //ÉèÖÃ×ÖÌåµÄ,¿í(´Ö)¶È,¸ß(³¤)¶È,ºÍ×ÖÌå
-		outtextxy(700,350,"3.ÖØĞÂÉèÖÃÃÔ¹¬");
+		settextcolor(RGB(255, 255, 17));    //è®¾ç½®å­—ä½“é¢œè‰²
+		settextstyle(30,0, "å¾®è½¯é›…é»‘");   //è®¾ç½®å­—ä½“çš„,å®½(ç²—)åº¦,é«˜(é•¿)åº¦,å’Œå­—ä½“
+		outtextxy(700,350,"3.é‡æ–°è®¾ç½®è¿·å®«");
 			setfillcolor(RED);
 	
 		_getch();
 		do
 		{
 		char s[10];
-		InputBox(s, 10, "°´ 0 ÍÆ³ö","ÇëÑ¡Ôñ²Ëµ¥±àºÅ:");
+		InputBox(s, 10, "æŒ‰ 0 æ¨å‡º","è¯·é€‰æ‹©èœå•ç¼–å·:");
 
-		// ½«ÓÃ»§ÊäÈë×ª»»ÎªÊı×Ö
+		// å°†ç”¨æˆ·è¾“å…¥è½¬æ¢ä¸ºæ•°å­—
 		sscanf(s, "%d", &choice);
-		}while(choice>3||choice<0);//ÅĞ¶ÏÊÇ·ñÊäÈëÕıÈ·
+		}while(choice>3||choice<0);//åˆ¤æ–­æ˜¯å¦è¾“å…¥æ­£ç¡®
 	closegraph();
 	return choice;
 }
-//-----------Õ»ÊµÏÖ------------
+//-----------æ ˆå®ç°------------
 
 typedef struct
 {
-	int i;				//µ±Ç°·½¿éµÄĞĞºÅ
-	int j;				//µ±Ç°·½¿éµÄÁĞºÅ
-	int di;				//diÊÇÏÂÒ»¿É×ßÏàÁÚ·½Î»µÄ·½Î»ºÅ
+	int i;				//å½“å‰æ–¹å—çš„è¡Œå·
+	int j;				//å½“å‰æ–¹å—çš„åˆ—å·
+	int di;				//diæ˜¯ä¸‹ä¸€å¯èµ°ç›¸é‚»æ–¹ä½çš„æ–¹ä½å·
 } Box;
 typedef struct
 {
-	Box data[MaxSize];	//´æ·Å·½¿é
-    int top;			//Õ»¶¥Ö¸Õë
-} StType;				//¶¨ÒåÕ»ÀàĞÍ
+	Box data[MaxSize];	//å­˜æ”¾æ–¹å—
+    int top;			//æ ˆé¡¶æŒ‡é’ˆ
+} StType;				//å®šä¹‰æ ˆç±»å‹
 
-void InitStack(StType *&s)		//³õÊ¼»¯Õ»
+void InitStack(StType *&s)		//åˆå§‹åŒ–æ ˆ
 {	s=(StType *)malloc(sizeof(StType));
 	s->top=-1;
 }
-void DestroyStack(StType *&s)	//Ïú»ÙÕ»
+void DestroyStack(StType *&s)	//é”€æ¯æ ˆ
 {
 	free(s);
 }
-bool StackEmpty(StType *s)		//ÅĞ¶ÏÕ»ÊÇ·ñÎª¿Õ
+bool StackEmpty(StType *s)		//åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
 {
 	return(s->top==-1);
 }
-bool Push(StType *&s,Box e)	//½øÕ»ÔªËØe
+bool Push(StType *&s,Box e)	//è¿›æ ˆå…ƒç´ e
 {
 	if (s->top==MaxSize-1)
 		return false;
@@ -110,7 +110,7 @@ bool Push(StType *&s,Box e)	//½øÕ»ÔªËØe
 	s->data[s->top]=e;
 	return true;
 }
-bool Pop(StType *&s,Box &e)	//³öÕ»ÔªËØe
+bool Pop(StType *&s,Box &e)	//å‡ºæ ˆå…ƒç´ e
 {
 	if (s->top==-1)	
 		return false;
@@ -118,14 +118,14 @@ bool Pop(StType *&s,Box &e)	//³öÕ»ÔªËØe
 	s->top--;
 	return true;
 }
-bool GetTop(StType *s,Box &e)	//È¡Õ»¶¥ÔªËØe
+bool GetTop(StType *s,Box &e)	//å–æ ˆé¡¶å…ƒç´ e
 {
 	if (s->top==-1)	
 		return false;
 	e=s->data[s->top];
 	return true;
 }
-bool mgpath(int xi=1,int yi=1,int xe=8,int ye=8)	//Çó½âÂ·¾¶Îª:(xi,yi)->(xe,ye)
+bool mgpath(int xi=1,int yi=1,int xe=8,int ye=8)	//æ±‚è§£è·¯å¾„ä¸º:(xi,yi)->(xe,ye)
 {
 	initgraph(width,high);
 	setfillcolor(GREEN);
@@ -148,8 +148,8 @@ bool mgpath(int xi=1,int yi=1,int xe=8,int ye=8)	//Çó½âÂ·¾¶Îª:(xi,yi)->(xe,ye)
 		{setfillcolor(RED);	fillrectangle(j*60,i*60,(j+1)*60,(i+1)*60);}
 		}
 		setfillcolor(RGB(52,222,220));
-		fillrectangle(1*60,0*60,(1+1)*60,(0+1)*60);//Èë¿Ú
-		fillrectangle(9*60,8*60,(9+1)*60,(8+1)*60);//³ö¿Ú
+		fillrectangle(1*60,0*60,(1+1)*60,(0+1)*60);//å…¥å£
+		fillrectangle(9*60,8*60,(9+1)*60,(8+1)*60);//å‡ºå£
 
 	e.i=xi;e.j=yi;e.di=-1;
 	Push(st,e);
@@ -175,11 +175,11 @@ bool mgpath(int xi=1,int yi=1,int xe=8,int ye=8)	//Çó½âÂ·¾¶Îª:(xi,yi)->(xe,ye)
 			fillcircle(path[k].j*60+30,path[k].i*60+30,20);
 
 				
-					//×ø±êµÄÊä³ö
-				settextcolor(RGB(255, 255, 17));    //ÉèÖÃ×ÖÌåÑÕÉ«
-				settextstyle(30,0, "Î¢ÈíÑÅºÚ");   //ÉèÖÃ×ÖÌåµÄ,¿í(´Ö)¶È,¸ß(³¤)¶È,ºÍ×ÖÌå
-				outtextxy(720,0,"ÃÔ¹¬Â·¾¶ÈçÏÂ£º");
-				settextstyle(25, 18, _T("ËÎÌå"));
+					//åæ ‡çš„è¾“å‡º
+				settextcolor(RGB(255, 255, 17));    //è®¾ç½®å­—ä½“é¢œè‰²
+				settextstyle(30,0, "å¾®è½¯é›…é»‘");   //è®¾ç½®å­—ä½“çš„,å®½(ç²—)åº¦,é«˜(é•¿)åº¦,å’Œå­—ä½“
+				outtextxy(720,0,"è¿·å®«è·¯å¾„å¦‚ä¸‹ï¼š");
+				settextstyle(25, 18, _T("å®‹ä½“"));
 
 				outtextxy(620+m*150,0+y*40,40);
 				outtextxy(650+m*150,0+y*40,path[k].i+48);
@@ -222,25 +222,25 @@ bool mgpath(int xi=1,int yi=1,int xe=8,int ye=8)	//Çó½âÂ·¾¶Îª:(xi,yi)->(xe,ye)
 		}
 
 	}
-DestroyStack(st);			//Ïú»ÙÕ»
-	return false;			//±íÊ¾Ã»ÓĞ¿É×ßÂ·¾¶,·µ»Øfalse
+DestroyStack(st);			//é”€æ¯æ ˆ
+	return false;			//è¡¨ç¤ºæ²¡æœ‰å¯èµ°è·¯å¾„,è¿”å›false
 }
-//============µİ¹éÊµÏÖÏàÓ¦Â·¾¶========================================
+//============é€’å½’å®ç°ç›¸åº”è·¯å¾„========================================
 struct migong
 {
-    int i;      //Â·¾¶ºá×ø±ê
-    int j;      //Â·¾¶×İ×ø±ê
-    int di;     //·½ÏòÖµ³õÊ¼Îª-1£¬0,1,2,3·Ö±ğ±íÊ¾ËÄ¸öÒª²éÕÒµÄ·½Ïò
-}Stack[MaxSize],Path[MaxSize];      //¶¨ÒåÕ»ºÍ´æ·Å×î¶ÌÂ·¾¶µÄÊı×é
+    int i;      //è·¯å¾„æ¨ªåæ ‡
+    int j;      //è·¯å¾„çºµåæ ‡
+    int di;     //æ–¹å‘å€¼åˆå§‹ä¸º-1ï¼Œ0,1,2,3åˆ†åˆ«è¡¨ç¤ºå››ä¸ªè¦æŸ¥æ‰¾çš„æ–¹å‘
+}Stack[MaxSize],Path[MaxSize];      //å®šä¹‰æ ˆå’Œå­˜æ”¾æœ€çŸ­è·¯å¾„çš„æ•°ç»„
  
-int top= -1;     //Õ»¶¥Ö¸Õë£¬³õÊ¼ÖµÎª-1
-int count= 1;    //Â·¾¶Êı¼ÆÊı
-int minlen=0;     //×î¶ÌÂ·¾¶³¤¶È
+int top= -1;     //æ ˆé¡¶æŒ‡é’ˆï¼Œåˆå§‹å€¼ä¸º-1
+int count= 1;    //è·¯å¾„æ•°è®¡æ•°
+int minlen=0;     //æœ€çŸ­è·¯å¾„é•¿åº¦
  
-void mgpath2() //Â·¾¶Îª:(1,1)->(M,N)
+void mgpath2() //è·¯å¾„ä¸º:(1,1)->(M,N)
 {     initgraph(width,high); 
     int i,j,di,nextfound,k;
-	int min[100]={0},mins[100];	//×î¶ÌÂ·¾¶
+	int min[100]={0},mins[100];	//æœ€çŸ­è·¯å¾„
 	//setlinecolor(BLACK);
 	for(i=0;i<10;i++)
 		line(left,up+i*60,right,up+i*60);
@@ -252,15 +252,15 @@ void mgpath2() //Â·¾¶Îª:(1,1)->(M,N)
 		{setfillcolor(RED);	fillrectangle(j*60,i*60,(j+1)*60,(i+1)*60);}
 		}
 		setfillcolor(RGB(52,222,220));
-		fillrectangle(1*60,0*60,(1+1)*60,(0+1)*60);//Èë¿Ú
-		fillrectangle(9*60,8*60,(9+1)*60,(8+1)*60);//³ö¿Ú
-	//³õÊ¼½áµã½øÕ»
+		fillrectangle(1*60,0*60,(1+1)*60,(0+1)*60);//å…¥å£
+		fillrectangle(9*60,8*60,(9+1)*60,(8+1)*60);//å‡ºå£
+	//åˆå§‹ç»“ç‚¹è¿›æ ˆ
     top++;
 	Stack[top].i=1;
 	Stack[top].j=1;
-	Stack[top].di=-1;  //¸ÃµãµÄ³õÊ¼·½ÏòÖµ-1£¬±íÊ¾»¹Ã»²éÕÒ¹ı´Ó´Ë³ö·¢µÄÆäËû4¸ö·½Ïò
-    mg[1][1]=-1;     //-1±íÊ¾¸Ã½ÚµãÎ»ÖÃ½øÕ»¹ı(×îºÃÓÃÆäËûÊı×éÀ´±êÊ¾)
-    while(top> -1) //Õ»²»¿ÕÊ±Ñ­»·
+	Stack[top].di=-1;  //è¯¥ç‚¹çš„åˆå§‹æ–¹å‘å€¼-1ï¼Œè¡¨ç¤ºè¿˜æ²¡æŸ¥æ‰¾è¿‡ä»æ­¤å‡ºå‘çš„å…¶ä»–4ä¸ªæ–¹å‘
+    mg[1][1]=-1;     //-1è¡¨ç¤ºè¯¥èŠ‚ç‚¹ä½ç½®è¿›æ ˆè¿‡(æœ€å¥½ç”¨å…¶ä»–æ•°ç»„æ¥æ ‡ç¤º)
+    while(top> -1) //æ ˆä¸ç©ºæ—¶å¾ªç¯
 	{  		
 		for(i=0;i<10;i++)
 				for(j=0;j<10;j++)
@@ -268,16 +268,16 @@ void mgpath2() //Â·¾¶Îª:(1,1)->(M,N)
 					{setfillcolor(GREEN);	fillrectangle(j*60,i*60,(j+1)*60,(i+1)*60);}
 					}
 				fillrectangle(1*60,1*60,(1+1)*60,(1+1)*60);
-		//1 -----»ñÈ¡Õ»¶¥
+		//1 -----è·å–æ ˆé¡¶
         i=Stack[top].i;
 		j=Stack[top].j;
-		di=Stack[top].di;  //Õ»¶¥ÔªËØµÄ²éÕÒ·½Ïò
+		di=Stack[top].di;  //æ ˆé¡¶å…ƒç´ çš„æŸ¥æ‰¾æ–¹å‘
 		//z=0;
-		//2 -----Èç¹ûÕÒµ½ÁË³ö¿Ú£¨M,N£©£¬ÔòÊä³ö²éÕÒÂ·¾¶£¬²¢ÍËÕ»£¬ÓÃĞÂµÄÕ»¶¥·½ÏòÖµÈ¡´úµ±Ç°µÄ²éÕÒ·½Ïò
+		//2 -----å¦‚æœæ‰¾åˆ°äº†å‡ºå£ï¼ˆM,Nï¼‰ï¼Œåˆ™è¾“å‡ºæŸ¥æ‰¾è·¯å¾„ï¼Œå¹¶é€€æ ˆï¼Œç”¨æ–°çš„æ ˆé¡¶æ–¹å‘å€¼å–ä»£å½“å‰çš„æŸ¥æ‰¾æ–¹å‘
         if(i==8 && j==8) 
 		{       
 			int m=0,y=1;minlen++;
-			for(k=0;k<=top;k++) //Êä³öÂ·¾¶
+			for(k=0;k<=top;k++) //è¾“å‡ºè·¯å¾„
 			{
 				int a,b;
 				a=Stack[k+1].i-Stack[k].i;
@@ -287,18 +287,18 @@ void mgpath2() //Â·¾¶Îª:(1,1)->(M,N)
 			fillcircle(Stack[k].j*60+30,Stack[k].i*60+30,20);
 			mins[k]=Stack[k].i;
 
-			//×ø±êµÄÊä³ö
-				settextcolor(RGB(255, 255, 17));    //ÉèÖÃ×ÖÌåÑÕÉ«
-				settextstyle(30,0, "Î¢ÈíÑÅºÚ");   //ÉèÖÃ×ÖÌåµÄ,¿í(´Ö)¶È,¸ß(³¤)¶È,ºÍ×ÖÌå
-				outtextxy(720,0,"ÃÔ¹¬Â·¾¶ÈçÏÂ£º");
-				settextstyle(25, 18, _T("ËÎÌå"));
+			//åæ ‡çš„è¾“å‡º
+				settextcolor(RGB(255, 255, 17));    //è®¾ç½®å­—ä½“é¢œè‰²
+				settextstyle(30,0, "å¾®è½¯é›…é»‘");   //è®¾ç½®å­—ä½“çš„,å®½(ç²—)åº¦,é«˜(é•¿)åº¦,å’Œå­—ä½“
+				outtextxy(720,0,"è¿·å®«è·¯å¾„å¦‚ä¸‹ï¼š");
+				settextstyle(25, 18, _T("å®‹ä½“"));
 
 				outtextxy(620+m*150,0+y*40,40);
 				outtextxy(650+m*150,0+y*40,Stack[k].i+48);
 				outtextxy(680+m*150,0+y*40,",");
 				outtextxy(700+m*150,0+y*40,Stack[k].j+48);
 				outtextxy(720+m*150,0+y*40,41);
-				outtextxy(730+m*150,0+y*40,s);	m++;//Êä³ö¸öÊı¼ÆËã
+				outtextxy(730+m*150,0+y*40,s);	m++;//è¾“å‡ºä¸ªæ•°è®¡ç®—
 				if(m==2){y++;m=0;}
 
 			Sleep(40);
@@ -306,62 +306,62 @@ void mgpath2() //Â·¾¶Îª:(1,1)->(M,N)
 			fillcircle(Stack[k].j*60+30,Stack[k].i*60+30,20);
 			
 	       }		
-			if(top+1<minlen) //±È½ÏÊä³ö×î¶ÌÂ·¾¶
+			if(top+1<minlen) //æ¯”è¾ƒè¾“å‡ºæœ€çŸ­è·¯å¾„
 			{       
                 for(int n=0;n<=top;n++)  
 				{
-                    Path[n]=Stack[n]; //±£´æ×î¶ÌÂ·¾¶
+                    Path[n]=Stack[n]; //ä¿å­˜æœ€çŸ­è·¯å¾„
 				}
                 minlen=top+1;
             }
 		
     
 
-            mg[Stack[top].i][Stack[top].j]=0;   //0±íÊ¾ÈÃ¸ÃÎ»ÖÃ±äÎªÆäËûÂ·¾¶µÄ¿É×ß½áµã
-			setfillcolor(BLACK);	solidrectangle(610,20,1000,800);//¸²¸ÇÉÏÒ»ÌõÂ·¾¶µÄ×ø±ê
-			//ÈÃÔªËØ³öÕ»
+            mg[Stack[top].i][Stack[top].j]=0;   //0è¡¨ç¤ºè®©è¯¥ä½ç½®å˜ä¸ºå…¶ä»–è·¯å¾„çš„å¯èµ°ç»“ç‚¹
+			setfillcolor(BLACK);	solidrectangle(610,20,1000,800);//è¦†ç›–ä¸Šä¸€æ¡è·¯å¾„çš„åæ ‡
+			//è®©å…ƒç´ å‡ºæ ˆ
             top--;
-			di=Stack[top].di;  //¼ÇÂ¼ÏÂÒ»´ÎµÄ²éÕÒ·½ÏòÎªĞÂÕ»¶¥µÄµÄ²éÕÒ·½Ïò	
+			di=Stack[top].di;  //è®°å½•ä¸‹ä¸€æ¬¡çš„æŸ¥æ‰¾æ–¹å‘ä¸ºæ–°æ ˆé¡¶çš„çš„æŸ¥æ‰¾æ–¹å‘	
         }
 	
-		//3 -------ÔÚµ±Ç°Õ»¶¥µÄ»ù´¡ÉÏÕÒµ½ÏÂÒ»¸ö¿É×ß½Úµã£¬Èç¹ûµ±Ç°Õ»¶¥µÄ4¸ö·½Ïò¶¼×ßÍêÁË£¬ÔòÍËÕ»ÕÒĞÂµÄÕ»¶¥
+		//3 -------åœ¨å½“å‰æ ˆé¡¶çš„åŸºç¡€ä¸Šæ‰¾åˆ°ä¸‹ä¸€ä¸ªå¯èµ°èŠ‚ç‚¹ï¼Œå¦‚æœå½“å‰æ ˆé¡¶çš„4ä¸ªæ–¹å‘éƒ½èµ°å®Œäº†ï¼Œåˆ™é€€æ ˆæ‰¾æ–°çš„æ ˆé¡¶
         nextfound=0;
-        while(di<8 && nextfound==0) //ÕÒÏÂÒ»¸ö¿É×ß½áµã
+        while(di<8 && nextfound==0) //æ‰¾ä¸‹ä¸€ä¸ªå¯èµ°ç»“ç‚¹
 		{     
-            di++; //ÏÂÒ»¸ö²éÕÒ·½Ïò
-            switch(di) //¼ÆËãÏÂÒ»¸ö²éÕÒ·½ÏòµÄ×ø±ê
+            di++; //ä¸‹ä¸€ä¸ªæŸ¥æ‰¾æ–¹å‘
+            switch(di) //è®¡ç®—ä¸‹ä¸€ä¸ªæŸ¥æ‰¾æ–¹å‘çš„åæ ‡
 			{
-                case 0:	i=Stack[top].i-1;	j=Stack[top].j;		break;   //ÉÏÃæ
-                case 1:	i=Stack[top].i;		j=Stack[top].j+1;	break;   //ÓÒ±ß
-                case 2:	i=Stack[top].i+1;	j=Stack[top].j;		break;   //ÏÂÃæ
-                case 3:	i=Stack[top].i;		j=Stack[top].j-1;	break;   //×ó±ß
+                case 0:	i=Stack[top].i-1;	j=Stack[top].j;		break;   //ä¸Šé¢
+                case 1:	i=Stack[top].i;		j=Stack[top].j+1;	break;   //å³è¾¹
+                case 2:	i=Stack[top].i+1;	j=Stack[top].j;		break;   //ä¸‹é¢
+                case 3:	i=Stack[top].i;		j=Stack[top].j-1;	break;   //å·¦è¾¹
             }
-            if(mg[i][j]==0)  //Èç¹ûÏÂÒ»¸ö¿É×ß½ÚµãÃ»ÓĞ½øÕ»¹ı£¬±ê¼ÇfindÎª1±íÊ¾ÕÒµ½ÁËÏÂÒ»¸ö¿É×ß½Úµã
+            if(mg[i][j]==0)  //å¦‚æœä¸‹ä¸€ä¸ªå¯èµ°èŠ‚ç‚¹æ²¡æœ‰è¿›æ ˆè¿‡ï¼Œæ ‡è®°findä¸º1è¡¨ç¤ºæ‰¾åˆ°äº†ä¸‹ä¸€ä¸ªå¯èµ°èŠ‚ç‚¹
 			{
                 nextfound=1;
 			}
         }
  
-        if(nextfound == 1) //´Óµ±Ç°Õ»¶¥ÉÏÕÒµ½ÁËÏÂÒ»¸ö¿É×ß½áµã
+        if(nextfound == 1) //ä»å½“å‰æ ˆé¡¶ä¸Šæ‰¾åˆ°äº†ä¸‹ä¸€ä¸ªå¯èµ°ç»“ç‚¹
 		{      
-            Stack[top].di=di;   //¸üĞÂÕ»¶¥ÔªËØµÄdiÖµÎª×îĞÂµÄ²éÕÒ·½Ïò
+            Stack[top].di=di;   //æ›´æ–°æ ˆé¡¶å…ƒç´ çš„diå€¼ä¸ºæœ€æ–°çš„æŸ¥æ‰¾æ–¹å‘
 			
-			//ÏÂÒ»¸ö¿É×ß½áµã½øÕ»
+			//ä¸‹ä¸€ä¸ªå¯èµ°ç»“ç‚¹è¿›æ ˆ
             top++;
             Stack[top].i=i;
             Stack[top].j=j;
             Stack[top].di=-1;
             mg[i][j]=-1;
         }
-		else  //Èç¹ûµ±Ç°Õ»¶¥µÄ4¸ö·½Ïò¶¼ÒÑ¾­²éÕÒÍê
+		else  //å¦‚æœå½“å‰æ ˆé¡¶çš„4ä¸ªæ–¹å‘éƒ½å·²ç»æŸ¥æ‰¾å®Œ
 		{
-            mg[Stack[top].i][Stack[top].j]=0;   //0±íÊ¾ÈÃ¸ÃÎ»ÖÃ±äÎªÆäËûÂ·¾¶µÄ¿É×ß½áµã
-            top--;  //µ±Ç°Õ»¶¥ÒÑ¾­²éÕÒÍê£¬ÈÃËü³öÕ»
+            mg[Stack[top].i][Stack[top].j]=0;   //0è¡¨ç¤ºè®©è¯¥ä½ç½®å˜ä¸ºå…¶ä»–è·¯å¾„çš„å¯èµ°ç»“ç‚¹
+            top--;  //å½“å‰æ ˆé¡¶å·²ç»æŸ¥æ‰¾å®Œï¼Œè®©å®ƒå‡ºæ ˆ
         }
     }
 	int n=0,y=1,m=0;
 
-	outtextxy(720,0,"×î¶ÌÂ·¾¶ÈçÏÂ£º");
+	outtextxy(720,0,"æœ€çŸ­è·¯å¾„å¦‚ä¸‹ï¼š");
 	//getch();
 	do	//for(int n=0,y=1,m=0;n<minlen;)
 	{
@@ -369,7 +369,7 @@ void mgpath2() //Â·¾¶Îª:(1,1)->(M,N)
 			setfillcolor(YELLOW);
 			if(n>0)	line(Path[n-1].j*60+30,Path[n-1].i*60+30,Path[n].j*60+30,Path[n].i*60+30);	
 			fillcircle(Path[n].j*60+30,Path[n].i*60+30,20);
-				settextstyle(25, 18, _T("ËÎÌå"));
+				settextstyle(25, 18, _T("å®‹ä½“"));
 			
 				outtextxy(620+m*150,0+y*40,40);
 				outtextxy(650+m*150,0+y*40,Path[n].i+48);
@@ -378,7 +378,7 @@ void mgpath2() //Â·¾¶Îª:(1,1)->(M,N)
 				outtextxy(720+m*150,0+y*40,41);
 				if(Path[n].j==8&&Path[n].i==8)break;
 					else
-				outtextxy(730+m*150,0+y*40,s);	m++;//Êä³ö¸öÊı¼ÆËã
+				outtextxy(730+m*150,0+y*40,s);	m++;//è¾“å‡ºä¸ªæ•°è®¡ç®—
 				if(m==2){y++;m=0;}
 			n++;
     }while(n<minlen||Path[n].j==8&&Path[n].i==8);
@@ -389,13 +389,13 @@ int main()
 {
 	mciSendString("open bkmusic.mp3 alias bkmusic",NULL,0,NULL);
 	mciSendString("play bkmusic repeat",NULL,0,NULL);
-	int choice;//¼ÇÂ¼Ñ¡Ôñ
+	int choice;//è®°å½•é€‰æ‹©
 	initgraph(width,high);
-	SetConsoleTitle("ÃÔ¹¬");	
+	SetConsoleTitle("è¿·å®«");	
 	do
 	{
-		choice=home_show();//Ö÷Ò³Ãæ£¬ÓÃÓÚ»ñÈ¡ÓÃ»§Ñ¡Ôñ
-		switch(choice)//¸ù¾İÑ¡Ôñ½øÈëÏàÓ¦¹¦ÄÜ
+		choice=home_show();//ä¸»é¡µé¢ï¼Œç”¨äºè·å–ç”¨æˆ·é€‰æ‹©
+		switch(choice)//æ ¹æ®é€‰æ‹©è¿›å…¥ç›¸åº”åŠŸèƒ½
 		{
 		case 1:   
 				mgpath(1,1,8,8);
